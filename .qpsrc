@@ -1,0 +1,27 @@
+[General]
+field=PID, START, USER, MEM, %CPU, TIME, COMMAND_LINE
+flags=infobar, ctrlbar, statbar, autosave, cpubar, loadgraph, loadicon, selectpids, hostname, service
+interval=1300
+version=40
+viewproc=0
+
+[commands]
+size=0
+
+[font]
+name=Sans
+size=12
+
+[geometry]
+height=768
+visiable=false
+width=1024
+x=128
+y=128
+
+[sort]
+field=MEM
+reversed=false
+
+[watchdog]
+size=0

@@ -24,6 +24,7 @@
 #!.config/
 !.gitconfig
 !.qpsrc
+!.xscreensaver
 # Zsh configurations
 !.zim
 .zim/*

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=cmst -m
+Name=cmst
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=true

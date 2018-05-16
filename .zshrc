@@ -1,10 +1,11 @@
 #
 # User configuration sourced by interactive shells
-#
-
-# Source zim
-if [ -s "${ZDOTDIR:-${HOME}}/.zim/init.zsh" ] ;then
-  . ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
-
+#                                                 
+                                                  
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+                                        
+# Start zim                             
+[ -s ${ZIM_HOME}/init.zsh ] && . ${ZIM_HOME}/init.zsh
+                                                       
 PATH="$HOME/.local/bin:$PATH"

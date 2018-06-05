@@ -36,7 +36,7 @@ git_prompt_info() {
           case $line in
             [A\ ][A\ ]\ *) add=$(( add + 1 )) ;;
             [R\ ][R\ ]\ *) rename=$(( rename + 1 )) ;;
-            [D\ ][D\ ]\ *) remove=$(( remove + 1 )) ;;
+            [D\ ][D\ ]\ *) delete=$(( delete + 1 )) ;;
             [M\ ][M\ ]\ *) modify=$(( modify + 1 )) ;;
           esac
         done

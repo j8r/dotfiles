@@ -6,6 +6,7 @@
 !README.md
 .config/*
 !.config/autostart
+!.config/cmst
 !.config/falkon
 # Don't keep browser data
 .config/falkon/profiles/default/*
@@ -18,13 +19,14 @@
 .config/lxqt/debug.log
 !.config/pavucontrol-qt
 !.config/pcmanfm-qt
+.config/pcmanfm-qt/lxqt
+!.config/pcmanfm-qt/lxqt/settings.json
 !.config/qterminal.org
 !.config/vlc
 #!.config/
 #!.config/
 !.gitconfig
 !.qpsrc
-!.xscreensaver
 # Zsh configurations
 !.zim
 .zim/*

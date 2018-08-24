@@ -1,7 +1,9 @@
 # A simple prompt that displays informations in a minimal way
 #
 
-git_prompt_info() {
+
+
+_git_prompt_info() {
   if ref=$(git rev-parse --abbrev-ref HEAD) 2>/dev/null; then                                         
     # Branch name                                                                                         
     ref=${ref#refs/heads/-HEAD}
@@ -40,7 +42,19 @@ git_prompt_info() {
             [M\ ][M\ ]\ *) modify=$(( modify + 1 )) ;;
           esac
         done
+        if [ "$(git rev-parse -q --verify remotes/origin/$ref)" ] ;then
+          commits_to_push=${$(git rev-list --left-right --count remotes/origin/$ref..$ref --)#*	}⇑
+          commits_to_pull=${$(git rev-list --left-right --count $ref..remotes/origin/$ref --)#*	}⇓
+          [ $commits_to_push = 0⇑ ] && commits_to_push=
+          [ $commits_to_pull = 0⇓ ] && commits_to_pull=
+        else
+          commits_to_push=
+          commits_to_pull=
+        fi
+            
       print "\
+%B%F{red}%b$commits_to_pull\
+%B%F{green}%b$commits_to_push\
 ${ZSH_THEME_GIT_PROMPT_NEW}$new\
 ${ZSH_THEME_GIT_PROMPT_ADD}$add\
 ${ZSH_THEME_GIT_PROMPT_RENAME}$rename\
@@ -75,7 +89,7 @@ prompt_setup() {
 
   # Define prompts.
   PROMPT='%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})%c%f '
-  RPROMPT='$(git_prompt_info)%f'
+  RPROMPT='$(_git_prompt_info)%f'
 }
 
 prompt_setup "$@"

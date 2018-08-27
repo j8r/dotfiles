@@ -4,24 +4,25 @@
 
 
 _git_prompt_info() {
-  if ref=$(git rev-parse --abbrev-ref HEAD) 2>/dev/null; then                                         
-    # Branch name                                                                                         
-    ref=${ref#refs/heads/-HEAD}
+  if STATUS=$(git status -sb --porcelain=v2) 2>/dev/null; then                                         
+    # Branch name
+    ref=${STATUS##*branch.head }
+    ref=${ref%%
+*}
 
-    if [ "$(git rev-parse -q --verify remotes/origin/$ref)" ] ;then
-      commits_to_push="${$(git rev-list --left-right --count remotes/origin/$ref..$ref --)#*	}⇑"
-      commits_to_pull="${$(git rev-list --left-right --count $ref..remotes/origin/$ref --)#*	}⇓"
-      [ $commits_to_push = 0⇑ ] && commits_to_push= || commits_to_push=%B%F{cyan}%b$commits_to_push
-      [ $commits_to_pull = 0⇓ ] && commits_to_pull= || commits_to_pull=%B%F{red}%b$commits_to_pull
-    else
-      commits_to_push=
-      commits_to_pull=
-    fi
+    # Commits ahead/behind
+    branch_ab=${STATUS##*\# branch.ab +}
+    commits_to_push=${branch_ab%% *}
 
-    # Branch status
-    STATUS=$(git status --porcelain=v1)
-    case $STATUS in
-      '') print "$commits_to_pull\
+    commits_to_pull=${branch_ab#*-}
+    commits_to_pull=${commits_to_pull%%
+*}
+    [ $commits_to_push -gt 0 ]  2>/dev/null && commits_to_push=%B%F{cyan}%b$commits_to_push⇑ || commits_to_push=
+    [ $commits_to_pull -gt 0 ] 2>/dev/null && commits_to_pull=%B%F{red}%b$commits_to_pull⇓  || commits_to_pull=
+
+    case ${STATUS##*
+} in
+      \#*) print "$commits_to_pull\
 $commits_to_push\
 ${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
       *)
@@ -45,13 +46,13 @@ ${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
         local IFS=$'\n'
         for line in ${=STATUS} ;do
           case $line in
-            ?[A-Z?]\ *) new=$(( new + 1 )) ;;
+            "? "*|1\ .[A-Z]\ *) new=$(( new + 1 )) ;;
           esac
           case $line in
-            [A\ ][A\ ]\ *) add=$(( add + 1 )) ;;
-            [R\ ][R\ ]\ *) rename=$(( rename + 1 )) ;;
-            [D\ ][D\ ]\ *) delete=$(( delete + 1 )) ;;
-            [M\ ][M\ ]\ *) modify=$(( modify + 1 )) ;;
+            1\ [A.][A.]\ *) add=$(( add + 1 )) ;;
+            1\ [R.][R.]\ *) rename=$(( rename + 1 )) ;;
+            1\ [D.][D.]\ *) delete=$(( delete + 1 )) ;;
+            1\ [M.][M.]\ *) modify=$(( modify + 1 )) ;;
           esac
         done
             

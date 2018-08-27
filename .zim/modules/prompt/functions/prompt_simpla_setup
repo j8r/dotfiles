@@ -8,10 +8,22 @@ _git_prompt_info() {
     # Branch name                                                                                         
     ref=${ref#refs/heads/-HEAD}
 
+    if [ "$(git rev-parse -q --verify remotes/origin/$ref)" ] ;then
+      commits_to_push="${$(git rev-list --left-right --count remotes/origin/$ref..$ref --)#*	}⇑"
+      commits_to_pull="${$(git rev-list --left-right --count $ref..remotes/origin/$ref --)#*	}⇓"
+      [ $commits_to_push = 0⇑ ] && commits_to_push= || commits_to_push=%B%F{cyan}%b$commits_to_push
+      [ $commits_to_pull = 0⇓ ] && commits_to_pull= || commits_to_pull=%B%F{red}%b$commits_to_pull
+    else
+      commits_to_push=
+      commits_to_pull=
+    fi
+
     # Branch status
     STATUS=$(git status --porcelain=v1)
     case $STATUS in
-      '') print "${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
+      '') print "$commits_to_pull\
+$commits_to_push\
+${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
       *)
         del=
         ins=
@@ -42,19 +54,10 @@ _git_prompt_info() {
             [M\ ][M\ ]\ *) modify=$(( modify + 1 )) ;;
           esac
         done
-        if [ "$(git rev-parse -q --verify remotes/origin/$ref)" ] ;then
-          commits_to_push=${$(git rev-list --left-right --count remotes/origin/$ref..$ref --)#*	}⇑
-          commits_to_pull=${$(git rev-list --left-right --count $ref..remotes/origin/$ref --)#*	}⇓
-          [ $commits_to_push = 0⇑ ] && commits_to_push=
-          [ $commits_to_pull = 0⇓ ] && commits_to_pull=
-        else
-          commits_to_push=
-          commits_to_pull=
-        fi
             
       print "\
-%B%F{red}%b$commits_to_pull\
-%B%F{green}%b$commits_to_push\
+$commits_to_pull\
+$commits_to_push\
 ${ZSH_THEME_GIT_PROMPT_NEW}$new\
 ${ZSH_THEME_GIT_PROMPT_ADD}$add\
 ${ZSH_THEME_GIT_PROMPT_RENAME}$rename\

@@ -17,7 +17,7 @@ _git_prompt_info() {
     commits_to_pull=${branch_ab#*-}
     commits_to_pull=${commits_to_pull%%
 *}
-    [ $commits_to_push -gt 0 ]  2>/dev/null && commits_to_push=%B%F{cyan}%b$commits_to_push⇑ || commits_to_push=
+    [ $commits_to_push -gt 0 ] 2>/dev/null && commits_to_push=%B%F{cyan}%b$commits_to_push⇑ || commits_to_push=
     [ $commits_to_pull -gt 0 ] 2>/dev/null && commits_to_pull=%B%F{red}%b$commits_to_pull⇓  || commits_to_pull=
 
     case ${STATUS##*
@@ -41,12 +41,12 @@ ${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
           elif [ "${ins#*\(}" = "-)" ] ;then; ins=
           fi
         fi
-        
+
         # Parse each status line
         local IFS=$'\n'
         for line in ${=STATUS} ;do
           case $line in
-            "? "*|1\ .[A-Z]\ *) new=$(( new + 1 )) ;;
+            "? "*|1\ [.A-Z][A-Z]\ *) new=$(( new + 1 )) ;;
           esac
           case $line in
             1\ [A.][A.]\ *) add=$(( add + 1 )) ;;

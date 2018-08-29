@@ -24,7 +24,7 @@ _git_prompt_info() {
 } in
       \#*) print "$commits_to_pull\
 $commits_to_push\
-${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
+%F{green}$ref";;
       *)
         del=
         ins=
@@ -57,14 +57,14 @@ ${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
       print "\
 $commits_to_pull\
 $commits_to_push\
-${ZSH_THEME_GIT_PROMPT_NEW}$new\
-${ZSH_THEME_GIT_PROMPT_ADD}$add\
-${ZSH_THEME_GIT_PROMPT_RENAME}$rename\
-${ZSH_THEME_GIT_PROMPT_DELETE}$delete\
-${ZSH_THEME_GIT_PROMPT_MODIFY}$modify\
-${ZSH_THEME_GIT_PROMPT_DIRTY}$ref\
-${ZSH_THEME_GIT_PROMPT_INS}$ins\
-${ZSH_THEME_GIT_PROMPT_DEL}$del";;
+%F{white}$new\
+%F{green}$add\
+%F{blue}$rename\
+%F{red}$delete\
+%F{magenta}$modify\
+%F{yellow}$ref\
+%F{green}$ins\
+%F{red}$del";;
     esac
   else
     parentdir=${PWD%/*}
@@ -75,21 +75,6 @@ ${ZSH_THEME_GIT_PROMPT_DEL}$del";;
 
 prompt_setup() {
   prompt_opts=(cr percent sp subst)
-
-  # Git stat
-  ZSH_THEME_GIT_PROMPT_NEW='%F{white}'
-  ZSH_THEME_GIT_PROMPT_ADD='%F{green}'
-  ZSH_THEME_GIT_PROMPT_RENAME='%F{blue}'
-  ZSH_THEME_GIT_PROMPT_MODIFY='%F{magenta}'
-  ZSH_THEME_GIT_PROMPT_DELETE='%F{red}'
-  # Branch
-  ZSH_THEME_GIT_PROMPT_DIRTY='%F{yellow}'
-  ZSH_THEME_GIT_PROMPT_CLEAN='%F{green}'
-  # Git diff
-  ZSH_THEME_GIT_PROMPT_INS='%F{green}'
-  ZSH_THEME_GIT_PROMPT_DEL='%F{red}'
-
-  # Define prompts.
   PROMPT='%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})%c%f '
   RPROMPT='$(_git_prompt_info)%f'
 }

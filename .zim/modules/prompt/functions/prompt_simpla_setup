@@ -29,17 +29,15 @@ ${ZSH_THEME_GIT_PROMPT_CLEAN}$ref";;
         del=
         ins=
         # Only show +/- when stat not empty
-        if ! stat=$(git diff --exit-code --shortstat "$ref" --) ;then
+        if ! stat=$(git diff --exit-code --shortstat "$ref" --) 2>/dev/null;then
           stat=${stat#*, }
-          ins=+${stat%% i*}
+          ins=${stat%% i*}
           stat=${stat##*, }
-          del=-${stat% d*}
-
-          # No deletions                                                                             
-          if   [ "${del#*\(}" = "+)" ] ;then; del=
-          # Or no insertions
-          elif [ "${ins#*\(}" = "-)" ] ;then; ins=
-          fi
+          del=${stat% d*}
+          
+          # Check if there are additions/deletions
+          [ "$ins" ] && ins=+$ins
+          [ "$del" ] && del=-$del
         fi
 
         # Parse each status line

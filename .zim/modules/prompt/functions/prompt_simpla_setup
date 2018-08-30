@@ -31,13 +31,13 @@ $commits_to_push\
         # Only show +/- when stat not empty
         if ! stat=$(git diff --exit-code --shortstat "$ref" --) 2>/dev/null;then
           stat=${stat#*, }
-          ins=${stat%% i*}
+          ins=+${stat% i*}
           stat=${stat##*, }
-          del=${stat% d*}
+          del=-${stat% d*}
           
           # Check if there are additions/deletions
-          [ "$ins" ] && ins=+$ins
-          [ "$del" ] && del=-$del
+          [ "$ins" -eq "$ins" ] 2>/dev/null || ins=
+          [ "$del" -eq "$del" ] 2>/dev/null || del=
         fi
 
         # Parse each status line

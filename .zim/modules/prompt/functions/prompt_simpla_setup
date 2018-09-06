@@ -1,7 +1,4 @@
 # A simple prompt that displays informations in a minimal way
-#
-
-
 
 _git_prompt_info() {
   if STATUS=$(git status -sb --porcelain=v2) 2>/dev/null; then                                         
@@ -47,10 +44,10 @@ $commits_to_push\
             "? "*|1\ [.A-Z][A-Z]\ *) new=$(( new + 1 )) ;;
           esac
           case $line in
-            1\ [A.][A.]\ *) add=$(( add + 1 )) ;;
-            1\ [R.][R.]\ *) rename=$(( rename + 1 )) ;;
-            1\ [D.][D.]\ *) delete=$(( delete + 1 )) ;;
-            1\ [M.][M.]\ *) modify=$(( modify + 1 )) ;;
+            1\ A[A.]\ *) add=$(( add + 1 )) ;;
+            1\ R[R.]\ *) rename=$(( rename + 1 )) ;;
+            1\ D[D.]\ *) delete=$(( delete + 1 )) ;;
+            1\ M[M.]\ *) modify=$(( modify + 1 )) ;;
           esac
         done
             

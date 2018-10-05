@@ -18,7 +18,13 @@ Rows=1
 TabBox=false
 TabBoxAlternative=false
 
+[Effect-Cube]
+BorderActivate=9
+BorderActivateCylinder=9
+BorderActivateSphere=9
+
 [Effect-DesktopGrid]
+BorderActivate=9
 BorderWidth=0
 LayoutMode=1
 ZoomDuration=150
@@ -28,8 +34,23 @@ Angle=15
 TabBox=true
 TabBoxAlternative=true
 
+[Effect-PresentWindows]
+BorderActivate=9
+BorderActivateAll=7
+BorderActivateClass=9
+
 [Effect-Slide]
 Duration=150
+
+[ElectricBorders]
+Bottom=None
+BottomLeft=None
+BottomRight=None
+Left=None
+Right=None
+Top=None
+TopLeft=None
+TopRight=None
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
@@ -51,9 +72,12 @@ CommandWindowWheel=Scroll
 
 [Plugins]
 coverswitchEnabled=true
+cubeslideEnabled=false
 desktopchangeosdEnabled=false
 flipswitchEnabled=true
 highlightwindowEnabled=true
+kwin4_effect_fadedesktopEnabled=false
+slideEnabled=true
 windowgeometryEnabled=false
 
 [Script-desktopchangeosd]
@@ -63,6 +87,8 @@ TextOnly=false
 [TabBox]
 ActivitiesMode=1
 ApplicationsMode=0
+BorderActivate=9
+BorderAlternativeActivate=9
 DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 DesktopMode=1
@@ -96,6 +122,12 @@ BorderSnapZone=10
 CenterSnapZone=0
 ClickRaise=true
 DelayFocusInterval=300
+ElectricBorderCooldown=350
+ElectricBorderCornerRatio=0.25
+ElectricBorderDelay=150
+ElectricBorderMaximize=true
+ElectricBorderTiling=true
+ElectricBorders=0
 FocusPolicy=ClickToFocus
 FocusStealingPreventionLevel=1
 GeometryTip=false
@@ -115,7 +147,7 @@ TitlebarDoubleClickCommand=Maximize
 WindowSnapZone=10
 
 [org.kde.kdecoration2]
-BorderSize=Normal
+BorderSize=None
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false

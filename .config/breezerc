@@ -5,3 +5,4 @@ ShadowStrength=89
 
 [Windeco]
 DrawBackgroundGradient=false
+DrawTitleBarSeparator=false

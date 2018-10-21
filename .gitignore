@@ -19,6 +19,7 @@
 !.config/kdeglobals
 !.config/kglobalshortcutsrc
 !/.config/kwinrc
+!/.config/kwinrulesrc
 !/.config/lxqt
 /.config/lxqt/debug.log
 !/.config/pavucontrol-qt

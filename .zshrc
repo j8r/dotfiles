@@ -1,5 +1,3 @@
-
-
 #
 # User configuration sourced by interactive shells
 #
@@ -8,8 +6,9 @@
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 # Start zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+[ -s "${ZIM_HOME}/init.zsh" ] && source ${ZIM_HOME}/init.zsh
 
 # Custom
 export PATH=$HOME/.local/bin:$PATH
-ssh-add -l > /dev/null || ssh-add
+export EDITOR=vi
+#ssh-add -l > /dev/null || ssh-add

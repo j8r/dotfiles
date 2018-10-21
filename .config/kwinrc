@@ -149,6 +149,6 @@ WindowSnapZone=10
 [org.kde.kdecoration2]
 BorderSize=None
 ButtonsOnLeft=MS
-ButtonsOnRight=HIAX
+ButtonsOnRight=HAX
 CloseOnDoubleClickOnMenu=false
 library=org.kde.breeze

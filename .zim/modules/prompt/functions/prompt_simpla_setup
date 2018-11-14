@@ -1,4 +1,30 @@
-# A simple prompt that displays informations in a minimal way
+# A simple prompt that displays information in a minimal way
+
+_string_reductor() {
+  local temp
+  case $(( $COLUMNS / ${#1} )) in
+    2) temp=${1#????????????????????????}
+       print "${1%$temp}…";;
+    1) temp=${1#????????????????}
+       print "${1%$temp}…";;
+    0) temp=${1#????????}
+       print "${1%$temp}…";;
+    *) print "$1";;
+  esac
+}
+
+_pwd_reduced() {
+  local temp
+  case $(( $COLUMNS / ${#PWD} )) in
+    2) temp=${PWD%????????????????????????}
+       print "…${PWD#$temp}";;
+    1) temp=${PWD%????????????????}
+       print "…${PWD#$temp}";;
+    0) temp=${PWD%????????}
+       print "…${PWD#$temp}";;
+    *) print "$PWD";;
+  esac
+}
 
 _git_prompt_info() {
   if STATUS=$(git status -sb --porcelain=v2) 2>/dev/null; then                                         
@@ -17,11 +43,13 @@ _git_prompt_info() {
     [ $commits_to_push -gt 0 ] 2>/dev/null && commits_to_push=%B%F{cyan}%b$commits_to_push⇑ || commits_to_push=
     [ $commits_to_pull -gt 0 ] 2>/dev/null && commits_to_pull=%B%F{red}%b$commits_to_pull⇓  || commits_to_pull=
 
+    branch=$(_string_reductor "$ref")
+
     case ${STATUS##*
 } in
       \#*) print "$commits_to_pull\
 $commits_to_push\
-%F{green}$ref";;
+%F{green}$branch";;
       *)
         del=
         ins=
@@ -50,7 +78,7 @@ $commits_to_push\
             1\ M[M.]\ *) modify=$(( modify + 1 )) ;;
           esac
         done
-            
+
       print "\
 $commits_to_pull\
 $commits_to_push\
@@ -59,7 +87,7 @@ $commits_to_push\
 %F{blue}$rename\
 %F{red}$delete\
 %F{magenta}$modify\
-%F{yellow}$ref\
+%F{yellow}$branch\
 %F{green}$ins\
 %F{red}$del";;
     esac
@@ -72,7 +100,7 @@ $commits_to_push\
 
 prompt_setup() {
   prompt_opts=(cr percent sp subst)
-  PROMPT='%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})%c%f '
+  PROMPT='%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})$(_pwd_reduced)%f '
   RPROMPT='$(_git_prompt_info)%f'
 }
 

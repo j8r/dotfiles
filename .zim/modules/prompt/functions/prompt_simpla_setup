@@ -1,29 +1,18 @@
 # A simple prompt that displays information in a minimal way
 
 _string_reductor() {
-  local temp
-  case $(( $COLUMNS / ${#1} )) in
-    2) temp=${1#????????????????????????}
-       print "${1%$temp}…";;
-    1) temp=${1#????????????????}
-       print "${1%$temp}…";;
-    0) temp=${1#????????}
-       print "${1%$temp}…";;
-    *) print "$1";;
-  esac
+  local string=${1:0:$(($COLUMNS / 6))}
+  [ "$string" = "$1" ] || string="$string…"
+  print "$string"
 }
 
 _pwd_reduced() {
-  local temp
-  case $(( $COLUMNS / ${#PWD} )) in
-    2) temp=${PWD%????????????????????????}
-       print "…${PWD#$temp}";;
-    1) temp=${PWD%????????????????}
-       print "…${PWD#$temp}";;
-    0) temp=${PWD%????????}
-       print "…${PWD#$temp}";;
-    *) print "$PWD";;
-  esac
+  local columns=$(($COLUMNS / 6))
+  if [ ${#PWD} -gt $columns ] ;then
+    print "…${PWD:$((${#PWD} - $columns)):${#PWD}}"
+  else
+    print "$PWD"  
+  fi
 }
 
 _git_prompt_info() {

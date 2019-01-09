@@ -1,6 +1,7 @@
-# A simple prompt that displays information in a minimal way
+# A simple prompt with advanced git features that displays information in a minimal way
 
 _string_reductor() {
+  # Take the COLUMNS/6 first characters
   local string=${1:0:$(($COLUMNS / 6))}
   [ "$string" = "$1" ] || string="$string…"
   print "$string"
@@ -8,22 +9,48 @@ _string_reductor() {
 
 _pwd_reduced() {
   local columns=$(($COLUMNS / 6))
-  if [ ${#PWD} -gt $columns ] ;then
-    print "…${PWD:$((${#PWD} - $columns)):${#PWD}}"
+  if [ "$1" ] ;then
+    local dir_path=${PWD#${1%/*}/*}
   else
-    print "$PWD"  
+    local dir_path=$PWD
+  fi
+  local dir_path_size=${#dir_path}
+
+  # Path too long, shrink it
+  if [ $dir_path_size -gt $columns ] ;then
+    if [ "$1" ] ;then
+      local half_columns=$(($columns / 2))
+      print "%U${dir_path:0:$half_columns}%u…${dir_path:$(($dir_path_size - half_columns)):$dir_path_size}"
+    else
+      print "…${dir_path:$(($dir_path_size - $columns)):$dir_path_size}"
+    fi
+  elif [ "$1" ] ;then
+    local repo="${dir_path%%/*}"
+    if [ "$repo" = "$dir_path" ] ;then
+      print "%U$repo%u"
+    else
+      print "%U$repo%u/${dir_path#*/}"    
+    fi
+  else
+    print "$dir_path"
   fi
 }
 
 _git_prompt_info() {
-  if STATUS=$(git status -sb --porcelain=v2) 2>/dev/null; then                                         
+  if [ "$1" ] ;then
+    # Fetch if not done since more than a day
+    fetch_time=$(stat -c '%Z' $1/.git/FETCH_HEAD 2>/dev/null || printf 0)
+    [ $(( $EPOCHSECONDS - $fetch_time)) -gt 86400 ] && git fetch --all --prune --prune-tags
+
+    local git_status=$(git status -sb --porcelain=v2)
+
     # Branch name
-    ref=${STATUS##*branch.head }
+    ref=${git_status##*branch.head }
     ref=${ref%%
 *}
 
     # Commits ahead/behind
-    branch_ab=${STATUS##*\# branch.ab +}
+    branch_ab=${git_status##*\# branch.ab +}
     commits_to_push=${branch_ab%% *}
 
     commits_to_pull=${branch_ab#*-}
@@ -34,7 +61,7 @@ _git_prompt_info() {
 
     branch=$(_string_reductor "$ref")
 
-    case ${STATUS##*
+    case ${git_status##*
 } in
       \#*) print "$commits_to_pull\
 $commits_to_push\
@@ -43,7 +70,7 @@ $commits_to_push\
         del=
         ins=
         # Only show +/- when stat not empty
-        if ! stat=$(git diff --exit-code --shortstat "$ref" --) 2>/dev/null;then
+        if ! stat=$(git diff --exit-code --shortstat "$ref" -- 2>/dev/null);then
           stat=${stat#*, }
           ins=+${stat% i*}
           stat=${stat##*, }
@@ -56,7 +83,7 @@ $commits_to_push\
 
         # Parse each status line
         local IFS=$'\n'
-        for line in ${=STATUS} ;do
+        for line in ${=git_status} ;do
           case $line in
             "? "*|1\ [.A-Z][A-Z]\ *) new=$(( new + 1 )) ;;
           esac
@@ -87,10 +114,17 @@ $commits_to_push\
   fi
 }
 
+prompt_precmd() {
+  local git_path=$(git rev-parse --show-toplevel 2>/dev/null)
+  PROMPT="%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})$(_pwd_reduced $git_path)%f "
+  RPROMPT="$(_git_prompt_info $git_path)%f"
+}
+
 prompt_setup() {
+  zmodload zsh/datetime
   prompt_opts=(cr percent sp subst)
-  PROMPT='%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})$(_pwd_reduced)%f '
-  RPROMPT='$(_git_prompt_info)%f'
+  add-zsh-hook precmd prompt_precmd
 }
 
 prompt_setup "$@"
+

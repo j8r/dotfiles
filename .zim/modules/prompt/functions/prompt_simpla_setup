@@ -8,7 +8,7 @@ _string_reductor() {
 }
 
 _pwd_reduced() {
-  local columns=$(($COLUMNS / 6))
+  local max_columns=$(($COLUMNS / 6))
   if [ "$1" ] ;then
     local dir_path=${PWD#${1%/*}/*}
   else
@@ -17,20 +17,19 @@ _pwd_reduced() {
   local dir_path_size=${#dir_path}
 
   # Path too long, shrink it
-  if [ $dir_path_size -gt $columns ] ;then
-    if [ "$1" ] ;then
-      local half_columns=$(($columns / 2))
-      print "%U${dir_path:0:$half_columns}%u…${dir_path:$(($dir_path_size - half_columns)):$dir_path_size}"
-    else
-      print "…${dir_path:$(($dir_path_size - $columns)):$dir_path_size}"
-    fi
-  elif [ "$1" ] ;then
+  if [ "$1" ]; then
     local repo="${dir_path%%/*}"
+
     if [ "$repo" = "$dir_path" ] ;then
       print "%U$repo%u"
+    elif [ $dir_path_size -gt $max_columns ] ;then
+      local half_max_columns=$(($max_columns / 2))
+      print "%U${dir_path:0:$half_max_columns}%u…${dir_path:$(($dir_path_size - half_max_columns)):$dir_path_size}"    
     else
       print "%U$repo%u/${dir_path#*/}"    
-    fi
+    fi    
+  elif [ $dir_path_size -gt $max_columns ] ;then
+    print "…${dir_path:$(($dir_path_size - $max_columns)):$dir_path_size}"
   else
     print "$dir_path"
   fi
@@ -38,10 +37,6 @@ _pwd_reduced() {
 
 _git_prompt_info() {
   if [ "$1" ] ;then
-    # Fetch if not done since more than a day
-    fetch_time=$(stat -c '%Z' $1/.git/FETCH_HEAD 2>/dev/null || printf 0)
-    [ $(( $EPOCHSECONDS - $fetch_time)) -gt 86400 ] && git fetch --all --prune --prune-tags
-
     local git_status=$(git status -sb --porcelain=v2)
 
     # Branch name
@@ -115,7 +110,13 @@ $commits_to_push\
 }
 
 prompt_precmd() {
-  local git_path=$(git rev-parse --show-toplevel 2>/dev/null)
+  local git_path
+  if git_path=$(git rev-parse --show-toplevel 2>/dev/null) ;then
+    # Fetch if not done since more than a day
+    local fetch_time=$(stat -c '%Z' $git_path/.git/FETCH_HEAD 2>/dev/null || printf 0)
+    [ $(( $EPOCHSECONDS - $fetch_time)) -gt 86400 ] && git fetch --all --prune --prune-tags
+  fi
+
   PROMPT="%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})$(_pwd_reduced $git_path)%f "
   RPROMPT="$(_git_prompt_info $git_path)%f"
 }

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# performance/powersave
+governor=${1-performance}
+
+i=0
+while [ $i -lt $(nproc) ] ;do
+  echo $governor > /sys/devices/system/cpu/cpufreq/policy$i/scaling_governor
+  echo "cpu$i set to $governor"
+  i=$(( i + 1 ))
+done

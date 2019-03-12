@@ -28,6 +28,11 @@
 !/.config/vlc
 !/.gitconfig
 !/.qpsrc
+!/.local
+/.local/*
+!/.local/bin
+/.local/bin/*
+!/.local/bin/governor
 # Zsh configurations
 !/.zim/modules/prompt/functions/prompt_simpla_setup
 !/.zimrc

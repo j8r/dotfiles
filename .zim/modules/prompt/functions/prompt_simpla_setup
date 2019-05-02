@@ -90,7 +90,7 @@ $commits_to_push\
           esac
         done
 
-      print "\
+        print "\
 $commits_to_pull\
 $commits_to_push\
 %F{white}$new\

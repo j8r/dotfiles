@@ -74,9 +74,13 @@ CommandWindowWheel=Scroll
 coverswitchEnabled=true
 cubeslideEnabled=false
 desktopchangeosdEnabled=false
+enforcedecoEnabled=true
 flipswitchEnabled=true
 highlightwindowEnabled=true
+kwin4_effect_fadeEnabled=false
 kwin4_effect_fadedesktopEnabled=false
+kwin4_effect_scaleEnabled=true
+minimizeallEnabled=false
 slideEnabled=true
 windowgeometryEnabled=false
 

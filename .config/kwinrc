@@ -31,7 +31,7 @@ ZoomDuration=150
 
 [Effect-FlipSwitch]
 Angle=15
-TabBox=true
+TabBox=false
 TabBoxAlternative=true
 
 [Effect-PresentWindows]
@@ -41,6 +41,9 @@ BorderActivateClass=9
 
 [Effect-Slide]
 Duration=150
+
+[Effect-kwin4_effect_translucency]
+MoveResize=90
 
 [ElectricBorders]
 Bottom=None
@@ -97,7 +100,7 @@ DesktopLayout=org.kde.breeze.desktop
 DesktopListLayout=org.kde.breeze.desktop
 DesktopMode=1
 HighlightWindows=true
-LayoutName=org.kde.breezedark.desktop
+LayoutName=org.kde.breeze.desktop
 MinimizedMode=0
 MultiScreenMode=0
 ShowDesktopMode=0

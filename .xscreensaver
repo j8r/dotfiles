@@ -17,9 +17,9 @@ demoCommand:	xscreensaver-demo
 prefsCommand:	xscreensaver-demo -prefs
 nice:		10
 memoryLimit:	0
-fade:		True
-unfade:		True
-fadeSeconds:	0:00:03
+fade:		False
+unfade:		False
+fadeSeconds:	0:00:00
 fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
@@ -72,7 +72,7 @@ programs:								      \
 				goop -root				    \n\
 				grav -root				    \n\
 				ifs -root				    \n\
-				unicode -root				    \n\
+-				unicode -root				    \n\
   GL: 				jigsaw -root				    \n\
 				julia -root				    \n\
 				kaleidescope -root			    \n\
@@ -119,7 +119,7 @@ programs:								      \
 				compass -root				    \n\
 				deluxe -root				    \n\
 				demon -root				    \n\
-  GL: 				extrusion -root				    \n\
+- GL: 				extrusion -root				    \n\
 				loop -root				    \n\
 				penetrate -root				    \n\
 				petri -root				    \n\
@@ -267,6 +267,17 @@ programs:								      \
   GL: 				raverhoop -root				    \n\
   GL: 				splodesic -root				    \n\
   GL: 				unicrud -root				    \n\
+- GL: 				dnalogo -root				    \n\
+  GL: 				esper -root				    \n\
+  GL: 				vigilance -root				    \n\
+  GL: 				crumbler -root				    \n\
+				filmleader -root			    \n\
+				glitchpeg -root				    \n\
+  GL: 				maze3d -root				    \n\
+  GL: 				peepers -root				    \n\
+  GL: 				razzledazzle -root			    \n\
+				vfeedback -root				    \n\
+  GL: 				handsy -root				    \n\
 
 
 pointerPollTime:    0:00:05

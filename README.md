@@ -1,18 +1,18 @@
 # My personal dotfiles
 
-Used for my LXQt setup.
+Used for my LXQt desktop.
 
 Zsh framework [Zim](https://github.com/zimfw/zimfw) with the custom theme [simpla](.zim/modules/prompt/functions/prompt_simpla_setup).
 
-## Installation
+## Setup
 
 Clone the repository to the home directory:
 
 ```sh
 cd ~/
-git clone https://github.com/j8r/dotfiles
-mv dotfiles/.git .
-rm -rf dotfiles
+git init
+git remote add origin https://github.com/j8r/dotfiles
+git fetch
 ```
 
 Force overwrite of dotfiles:

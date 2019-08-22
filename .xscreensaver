@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.36 for jrei on Tue May 15 11:37:25 2018.
+# Written by xscreensaver-demo 5.42 for jrei on Thu Aug 22 17:09:50 2019.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:05:00
+timeout:	0:03:00
 cycle:		0:03:00
-lock:		False
-lockTimeout:	0:00:00
+lock:		True
+lockTimeout:	0:01:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
@@ -24,7 +24,7 @@ fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	False
+dpmsEnabled:	True
 dpmsQuickOff:	False
 dpmsStandby:	2:00:00
 dpmsSuspend:	2:00:00
@@ -35,7 +35,7 @@ chooseRandomImages: False
 imageDirectory:	
 
 mode:		random
-selected:	-1
+selected:	98
 
 textMode:	program
 textLiteral:	XScreenSaver
@@ -112,14 +112,14 @@ programs:								      \
   GL: 				sonar -root				    \n\
   GL: 				stairs -root				    \n\
 				truchet -root				    \n\
-				vidwhacker -root			    \n\
+-				vidwhacker -root			    \n\
 				blaster -root				    \n\
 				bumps -root				    \n\
 				ccurve -root				    \n\
 				compass -root				    \n\
 				deluxe -root				    \n\
 				demon -root				    \n\
-- GL: 				extrusion -root				    \n\
+  GL: 				extrusion -root				    \n\
 				loop -root				    \n\
 				penetrate -root				    \n\
 				petri -root				    \n\
@@ -183,7 +183,7 @@ programs:								      \
 				eruption -root				    \n\
   GL: 				flipflop -root				    \n\
   GL: 				flyingtoasters -root			    \n\
-				fontglide -root				    \n\
+-				fontglide -root				    \n\
   GL: 				gleidescope -root			    \n\
   GL: 				glknots -root				    \n\
   GL: 				glmatrix -root				    \n\
@@ -272,7 +272,8 @@ programs:								      \
   GL: 				vigilance -root				    \n\
   GL: 				crumbler -root				    \n\
 				filmleader -root			    \n\
-				glitchpeg -root				    \n\
+-				glitchpeg -root				    \n\
+  GL: 				handsy -root				    \n\
   GL: 				maze3d -root				    \n\
   GL: 				peepers -root				    \n\
   GL: 				razzledazzle -root			    \n\

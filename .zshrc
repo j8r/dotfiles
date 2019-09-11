@@ -11,4 +11,3 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Custom
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR=vi
-#ssh-add -l > /dev/null || ssh-add

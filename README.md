@@ -19,9 +19,9 @@ git remote add origin https://github.com/j8r/dotfiles
 git fetch
 ```
 
-Force overwrite of dotfiles:
+Restore specific files, or all if none set:
 
-`git reset --hard`
+`git checkout master <files>`
 
 ## Update subtree
 

@@ -34,6 +34,7 @@
 /.local/bin/*
 !/.local/bin/governor
 # Zsh configurations
-!/.zim/modules/prompt/functions/prompt_simpla_setup
+!/.zim/modules/simpla/simpla.zsh-theme
 !/.zimrc
+!/.zshenv
 !/.zshrc

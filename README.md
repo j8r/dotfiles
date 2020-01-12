@@ -6,7 +6,11 @@ Zsh framework [Zim](https://github.com/zimfw/zimfw) with the custom theme [simpl
 
 ## Setup
 
-Clone the repository to the home directory:
+- Install ZIM:
+
+https://github.com/zimfw/zimfw#installation
+
+- Clone the repository to the home directory:
 
 ```sh
 cd ~/

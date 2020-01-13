@@ -124,4 +124,11 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [ -s "${ZIM_HOME}/init.zsh" ] && source ${ZIM_HOME}/init.zsh
 
 # Custom
-ssh-add -l >/dev/null || ssh-add
+export EDITOR=vi
+ssh_env=${XDG_CACHE_HOME:-$HOME}/.ssh-agent
+[ -f $ssh_env ] && . $ssh_env
+if ! ssh-add -l >/dev/null 2>&1 ;then
+  (umask 066; ssh-agent | sed '$ d' >! $ssh_env)
+  . $ssh_env
+  ssh-add
+fi

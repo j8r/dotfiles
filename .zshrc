@@ -34,6 +34,8 @@ WORDCHARS=${WORDCHARS//[\/]}
 # Module configuration
 # --------------------
 
+zstyle ':zim:git' aliases-prefix 'g'
+
 #
 # completion
 #

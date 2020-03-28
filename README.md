@@ -15,7 +15,7 @@ https://github.com/zimfw/zimfw#installation
 ```sh
 cd ~/
 git init
-git remote add origin https://github.com/j8r/dotfiles
+git remote add origin git@github.com:j8r/dotfiles.git
 git fetch
 ```
 

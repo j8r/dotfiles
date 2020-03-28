@@ -21,7 +21,7 @@ git fetch
 
 Restore specific files, or all if none set:
 
-`git checkout master <files>`
+`git checkout master [-f] <files>`
 
 ## Update subtree
 

@@ -1,3 +1,6 @@
+[$Version]
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
+
 [Compositing]
 AnimationSpeed=2
 Backend=OpenGL
@@ -11,6 +14,9 @@ WindowsBlockCompositing=true
 XRenderSmoothScale=false
 
 [Desktops]
+Id_1=046e7c8c-d479-42cd-af96-f5afeeb417c8
+Id_2=966c1835-5b18-49e7-b84a-837065445500
+Id_3=262054f3-3d17-4ebe-a868-fd1e06f497b9
 Number=3
 Rows=1
 
@@ -57,7 +63,7 @@ TopRight=None
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
-CommandActiveTitlebar2=Start window tab drag
+CommandActiveTitlebar2=Raise
 CommandActiveTitlebar3=Operations menu
 CommandAll1=Move
 CommandAll2=Toggle raise and lower
@@ -65,9 +71,9 @@ CommandAll3=Resize
 CommandAllKey=Alt
 CommandAllWheel=Nothing
 CommandInactiveTitlebar1=Activate and raise
-CommandInactiveTitlebar2=Start window tab drag
+CommandInactiveTitlebar2=Activate and raise
 CommandInactiveTitlebar3=Operations menu
-CommandTitlebarWheel=Switch to Window Tab to the Left/Right
+CommandTitlebarWheel=Raise/Lower
 CommandWindow1=Activate, raise and pass click
 CommandWindow2=Activate and pass click
 CommandWindow3=Activate and pass click
@@ -155,7 +161,9 @@ WindowSnapZone=10
 
 [org.kde.kdecoration2]
 BorderSize=None
+BorderSizeAuto=false
 ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 library=org.kde.breeze
+theme=

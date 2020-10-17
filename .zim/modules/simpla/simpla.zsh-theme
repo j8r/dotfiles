@@ -102,10 +102,6 @@ $commits_to_push\
 %F{green}$ins\
 %F{red}$del";;
     esac
-  else
-    parentdir=${PWD%/*}
-    visible=$(ls -1 | wc -l)
-    print "%F{yellow}$visible%F{magenta}$(( $(ls -A1 | wc -l) - visible ))%F{white}${parentdir##*/}"
   fi
 }
 

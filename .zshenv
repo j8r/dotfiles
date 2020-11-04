@@ -6,4 +6,4 @@
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 
 # Custom
-export PATH=$HOME/.local/bin:$PATH
+export PATH=/usr/sbin:$HOME/.local/bin:$PATH

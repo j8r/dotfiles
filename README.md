@@ -6,11 +6,21 @@ Zsh framework [Zim](https://github.com/zimfw/zimfw) with the custom theme [simpl
 
 ## Setup
 
+- For a vanilla installation, generate a new SSH key
+
+`ssh-keygen -t ed25519`
+
+Then add `cat ~/.ssh/id_ed25519.pub` to GitHub.
+
 - Install ZIM:
 
 https://github.com/zimfw/zimfw#installation
 
-- Clone the repository to the home directory:
+- Change the default shell of the user.
+
+`chsh -s $(which zsh)`
+
+- Clone the repository to the home directory
 
 ```sh
 cd ~/
@@ -19,9 +29,19 @@ git remote add origin git@github.com:j8r/dotfiles.git
 git fetch
 ```
 
-Restore specific files, or all if none set:
+Restore specific files, or all if none set
 
-`git checkout master [-f] <files>`
+`git checkout -f <files>`
+
+- Add the user to the sudoers
+
+`su -c "usermod -aG sudo $USER"`
+
+- Copy the Zsh files and set the prompt for the root user
+
+`su -c "cp -r $HOME/.z* ~/; chsh -s $(which zsh)"`
+
+- Logout to apply the changes to the user
 
 ## Update subtree
 
@@ -31,4 +51,3 @@ git subtree pull --prefix .config/geany/geany-themes https://github.com/geany/ge
 git subtree pull --prefix .config/geany/geany-crystal https://github.com/crystal-lang-tools/geany-crystal master --squash
 git stash apply
 ```
-

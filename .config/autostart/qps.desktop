@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=qps -mini
-Name=qps
-Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true

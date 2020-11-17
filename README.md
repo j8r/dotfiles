@@ -1,6 +1,6 @@
 # My personal dotfiles
 
-Used for my LXQt desktop.
+Configurations used for my KDE/LXQt desktop.
 
 Zsh framework [Zim](https://github.com/zimfw/zimfw) with the custom theme [simpla](.zim/modules/prompt/functions/prompt_simpla_setup).
 

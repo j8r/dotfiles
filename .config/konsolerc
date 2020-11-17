@@ -1,0 +1,23 @@
+[Desktop Entry]
+DefaultProfile=Profile.profile
+
+[Favorite Profiles]
+Favorites=Profile.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+ShowWindowTitleOnTitleBar=true
+
+[MainWindow]
+HDMI-A-0 DVI-D-0 Height 1080=691
+HDMI-A-0 DVI-D-0 Width 1920=1256
+HDMI-A-0 DVI-D-0 XPosition=406
+HDMI-A-0 DVI-D-0 YPosition=162
+HDMI-A-1 DVI-D-1 Height 1080=1051
+HDMI-A-1 DVI-D-1 Width 1920=1884
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABOgAAAKzAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader

@@ -18,6 +18,7 @@
 !/.config/gtk-3.0
 !.config/kdeglobals
 !.config/kglobalshortcutsrc
+!/.config/konsolerc
 !/.config/kwinrc
 !/.config/kwinrulesrc
 !/.config/lxqt
@@ -33,6 +34,10 @@
 !/.local/bin
 /.local/bin/*
 !/.local/bin/governor
+!/.local/share
+/.local/share/*
+!/.local/share/konsole
+!/.local/share/konsole/Profile.profile
 # Zsh configurations
 !/.zim/modules/simpla/simpla.zsh-theme
 !/.zimrc

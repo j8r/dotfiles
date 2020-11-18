@@ -5,9 +5,10 @@
 !/LICENSE
 !/README.md
 /.config/*
-/!.config/autostart
-/!.config/cmst
-/!.config/falkon
+!/.config/autostart
+!/.config/autostart/cmst
+!/.config/cmst
+!/.config/falkon
 # Don't keep browser data
 /.config/falkon/profiles/default/*
 !/.config/falkon/profiles/default/settings.ini

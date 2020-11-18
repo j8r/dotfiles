@@ -1,6 +1,20 @@
 [Desktop Entry]
-Exec=cmst -m
+Comment[en_US]=
+Comment=
+Exec=cmst -m -w 3
+GenericName[en_US]=
+GenericName=
+MimeType=
+Name[en_US]=cmst
 Name=cmst
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
 Type=Application
 Version=1.0
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
 X-LXQt-Need-Tray=true

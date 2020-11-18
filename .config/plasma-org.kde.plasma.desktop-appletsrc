@@ -86,7 +86,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][57][Applets][61][Configuration]
-PreloadWeight=60
+PreloadWeight=80
 SystrayContainmentId=62
 
 [Containments][57][Applets][68]
@@ -107,6 +107,9 @@ DialogWidth=720
 [Containments][57][Applets][77]
 immutability=1
 plugin=org.kde.plasma.systemmonitor
+
+[Containments][57][Applets][77][Configuration]
+PreloadWeight=95
 
 [Containments][57][Applets][77][Configuration][Appearance]
 chartFace=org.kde.ksysguard.barchart
@@ -141,6 +144,9 @@ showLegend=false
 immutability=1
 plugin=org.kde.plasma.systemmonitor
 
+[Containments][57][Applets][78][Configuration]
+PreloadWeight=90
+
 [Containments][57][Applets][78][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
 title=Network speed
@@ -155,9 +161,6 @@ network/all/sentDataRate=233,120,61
 
 [Containments][57][Applets][78][Configuration][Sensors]
 highPrioritySensorIds=["network/all/receivedDataRate","network/all/sentDataRate"]
-
-[Containments][57][Applets][78][Configuration][org.kde.ksysguard.linechart][General]
-showLegend=false
 
 [Containments][57][ConfigDialog]
 DialogHeight=1080
@@ -179,12 +182,15 @@ wallpaperplugin=org.kde.image
 immutability=1
 plugin=org.kde.plasma.volume
 
+[Containments][62][Applets][63][Configuration]
+PreloadWeight=60
+
 [Containments][62][Applets][64]
 immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][62][Applets][64][Configuration]
-PreloadWeight=55
+PreloadWeight=60
 
 [Containments][62][Applets][65]
 immutability=1
@@ -205,6 +211,13 @@ plugin=org.kde.plasma.bluetooth
 [Containments][62][Applets][71]
 immutability=1
 plugin=org.kde.plasma.battery
+
+[Containments][62][Applets][79]
+immutability=1
+plugin=org.kde.plasma.mediacontroller
+
+[Containments][62][Applets][79][Configuration]
+PreloadWeight=39
 
 [Containments][62][General]
 extraItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect

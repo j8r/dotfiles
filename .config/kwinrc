@@ -1,8 +1,7 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed
 
 [Compositing]
-AnimationSpeed=2
 Backend=OpenGL
 Enabled=true
 GLCore=true
@@ -19,6 +18,12 @@ Id_2=966c1835-5b18-49e7-b84a-837065445500
 Id_3=262054f3-3d17-4ebe-a868-fd1e06f497b9
 Number=3
 Rows=1
+
+[DrmOutputs][f7f62e5fe0][95a2a069b0]
+Scale=1
+
+[DrmOutputs][f7f62e5fe0][dc9ec1bd64]
+Scale=1
 
 [Effect-CoverSwitch]
 TabBox=false
@@ -166,4 +171,4 @@ ButtonsOnLeft=MS
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 library=org.kde.breeze
-theme=
+theme=Breeze

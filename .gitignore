@@ -38,6 +38,7 @@
 !/.local/share
 /.local/share/*
 !/.local/share/konsole
+/.local/share/konsole/*
 !/.local/share/konsole/Profile.profile
 # Zsh configurations
 !/.zim/modules/simpla/simpla.zsh-theme

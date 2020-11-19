@@ -23,7 +23,7 @@ DialogWidth=720
 [Containments][52][General]
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=749
-positions=1,17,desktop:/thunderbird.desktop,0,2,desktop:/geany.desktop,0,3,desktop:/Projects,0,0,desktop:/firefox.desktop,0,1
+positions=1,17,desktop:/firefox.desktop,0,1,desktop:/Projects,0,0,desktop:/geany.desktop,0,3,desktop:/thunderbird.desktop,0,2
 sortMode=-1
 
 [Containments][52][Wallpaper][org.kde.image][General]
@@ -109,7 +109,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][57][Applets][77][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][57][Applets][77][Configuration][Appearance]
 chartFace=org.kde.ksysguard.barchart
@@ -145,7 +145,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][57][Applets][78][Configuration]
-PreloadWeight=90
+PreloadWeight=95
 
 [Containments][57][Applets][78][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -217,7 +217,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][62][Applets][79][Configuration]
-PreloadWeight=39
+PreloadWeight=23
 
 [Containments][62][General]
 extraItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect
@@ -237,4 +237,4 @@ Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/Projects,0,desktop:/firefox.desktop,0,desktop:/thunderbird.desktop,0,desktop:/geany.desktop,0
+screenMapping=desktop:/firefox.desktop,0,desktop:/thunderbird.desktop,0,desktop:/Projects,0,desktop:/geany.desktop,0

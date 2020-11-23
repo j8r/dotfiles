@@ -1,53 +1,50 @@
-# My personal dotfiles
+# geany-crystal
 
-Used for my LXQt desktop.
+Crystal support for the [Geany editor](https://www.geany.org/).
 
-Zsh framework [Zim](https://github.com/zimfw/zimfw) with the custom theme [simpla](.zim/modules/prompt/functions/prompt_simpla_setup).
+See also the [Crystal page of the Geany Wiki](https://wiki.geany.org/config/crystal).
 
-## Setup
+# Installation
 
-- For a vanilla installation, generate a new SSH key
+- Copy the filetype
 
-`ssh-keygen -t ed25519`
+`cp filetypes.Crystal.conf ~/.config/geany/filedefs`
 
-Then add `cat ~/.ssh/id_ed25519.pub` to GitHub.
+- In the menu `Tools` > `Configuration Files` > `filetype_extensions.conf`
+  - In `[Extensions]`, add `Crystal=*.cr;*.ecr;`
+  - In `[Groups]` then `Programming=`, add `Crystal;` to the line
 
-- Install ZIM:
+# Shortcuts
 
-https://github.com/zimfw/zimfw#installation
+- <kbd>F5</kbd>: Run
+- <kbd>F8</kbd>: Build
+- <kbd>F9</kbd>: Format
 
-- Change the default shell of the user.
+Don't forget to reload after formatting (<kbd>Ctrl</kbd> + <kbd>R</kbd> by default).
 
-`chsh -s $(which zsh)`
+# Language issues
 
-- Clone the repository to the home directory
+Crystal isn't supported officially by Geany, so another close language has to be chosen instead.
+We have the choice of either `Ruby` or `CoffeeScript`, here are their pros/cons.
+You can switch from one to another by modifying `~/.config/geany/filedefs/filetypes.Crystal.conf`.
 
-```sh
-cd ~/
-git init
-git remote add origin git@github.com:j8r/dotfiles.git
-git fetch
-```
+## CoffeeScript (default)
 
-Restore specific files, or all if none set
+Configuration: `[styling=Coffeescript]` and `lexer_filetype=CoffeeScript`
 
-`git checkout -f <files>`
+- structs and enums can be collapsed
+- heredocs are not highlighted (because JavaScript doesn't)
+- macros syntax are OK
+- methods and symbols aren't highlighted
+- blue color for common methods and related keywords
 
-- Add the user to the sudoers
+## Ruby
 
-`su -c "usermod -aG sudo $USER"`
+Configuration: `[styling=Ruby]` and `lexer_filetype=Ruby`
 
-- Copy the Zsh files and set the prompt for the root user
+- supports heredocs
+- macro syntax not well supported, and usually mess up the rest of the file
+- struct can't be collapsed
+- standard and custom types are highlighted the same
 
-`su -c "cp -r $HOME/.z* ~/; chsh -s $(which zsh)"`
-
-- Logout to apply the changes to the user
-
-## Update subtree
-
-```sh
-git stash
-git subtree pull --prefix .config/geany/geany-themes https://github.com/geany/geany-themes master --squash
-git subtree pull --prefix .config/geany/geany-crystal https://github.com/crystal-lang-tools/geany-crystal master --squash
-git stash apply
-```
+See the [Geany Wiki](https://wiki.geany.org/config/crystal) for more information about this configuration.

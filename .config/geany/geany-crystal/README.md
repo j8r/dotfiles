@@ -2,12 +2,16 @@
 
 Crystal support for the [Geany editor](https://www.geany.org/).
 
+See also the [Crystal page of the Geany Wiki](https://wiki.geany.org/config/crystal).
+
 # Installation
 
-- puts `filetypes.Crystal.conf` to `~/.config/geany/filedefs`
+- Copy the filetype
 
-- In the menu `Tools` > `Configuration Files` > `filetype_externsions.conf`
-  - In `[Extensions]`, add `Crystal=*.cr;*.ecr;*.crystal;`
+`cp filetypes.Crystal.conf ~/.config/geany/filedefs`
+
+- In the menu `Tools` > `Configuration Files` > `filetype_extensions.conf`
+  - In `[Extensions]`, add `Crystal=*.cr;*.ecr;`
   - In `[Groups]` then `Programming=`, add `Crystal;` to the line
 
 # Shortcuts
@@ -20,7 +24,7 @@ Don't forget to reload after formatting (<kbd>Ctrl</kbd> + <kbd>R</kbd> by defau
 
 # Language issues
 
-Crystal isn't supported officially by Geany, so another close languages has to be chosen instead.
+Crystal isn't supported officially by Geany, so another close language has to be chosen instead.
 We have the choice of either `Ruby` or `CoffeeScript`, here are their pros/cons.
 You can switch from one to another by modifying `~/.config/geany/filedefs/filetypes.Crystal.conf`.
 
@@ -29,23 +33,18 @@ You can switch from one to another by modifying `~/.config/geany/filedefs/filety
 Configuration: `[styling=Coffeescript]` and `lexer_filetype=CoffeeScript`
 
 - structs and enums can be collapsed
-- heredocs aren't supported (because JavaScript doesn't)
+- heredocs are not highlighted (because JavaScript doesn't)
 - macros syntax are OK
-- method and symbols aren't highlighted
+- methods and symbols aren't highlighted
+- blue color for common methods and related keywords
 
 ## Ruby
 
 Configuration: `[styling=Ruby]` and `lexer_filetype=Ruby`
 
-- support heredocs
-- macro syntax not well supported
+- supports heredocs
+- macro syntax not well supported, and usually mess up the rest of the file
 - struct can't be collapsed
-- standard types aren't highlighted
+- standard and custom types are highlighted the same
 
-## Common
-
-Some non exhaustive features not supported when choosing either `Ruby` or `CoffeeScript`:
-
-- structs
-- enums
-- class and instance variables (including getter, setter etc)
+See the [Geany Wiki](https://wiki.geany.org/config/crystal) for more information about this configuration.

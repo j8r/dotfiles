@@ -86,7 +86,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][57][Applets][61][Configuration]
-PreloadWeight=80
+PreloadWeight=100
 SystrayContainmentId=62
 
 [Containments][57][Applets][68]
@@ -94,7 +94,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][57][Applets][68][Configuration]
-PreloadWeight=60
+PreloadWeight=80
 
 [Containments][57][Applets][68][Configuration][Appearance]
 dateFormat=isoDate
@@ -112,7 +112,7 @@ plugin=org.kde.plasma.systemmonitor
 PreloadWeight=100
 
 [Containments][57][Applets][77][Configuration][Appearance]
-chartFace=org.kde.ksysguard.barchart
+chartFace=org.kde.ksysguard.linechart
 title=Individual Core Usage
 
 [Containments][57][Applets][77][Configuration][ConfigDialog]
@@ -132,6 +132,7 @@ cpu/cpu6/TotalLoad=174,233,61
 cpu/cpu7/TotalLoad=88,233,61
 cpu/cpu8/TotalLoad=61,233,120
 cpu/cpu9/TotalLoad=61,233,206
+cpu/system/TotalLoad=61,174,233
 
 [Containments][57][Applets][77][Configuration][Sensors]
 highPrioritySensorIds=["cpu/cpu0/TotalLoad","cpu/cpu1/TotalLoad","cpu/cpu10/TotalLoad","cpu/cpu11/TotalLoad","cpu/cpu2/TotalLoad","cpu/cpu3/TotalLoad","cpu/cpu4/TotalLoad","cpu/cpu5/TotalLoad","cpu/cpu6/TotalLoad","cpu/cpu7/TotalLoad","cpu/cpu8/TotalLoad","cpu/cpu9/TotalLoad"]
@@ -145,7 +146,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][57][Applets][78][Configuration]
-PreloadWeight=95
+PreloadWeight=100
 
 [Containments][57][Applets][78][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -183,7 +184,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][62][Applets][63][Configuration]
-PreloadWeight=60
+PreloadWeight=85
 
 [Containments][62][Applets][64]
 immutability=1
@@ -196,6 +197,9 @@ PreloadWeight=60
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
+[Containments][62][Applets][65][Configuration]
+PreloadWeight=60
+
 [Containments][62][Applets][66]
 immutability=1
 plugin=org.kde.kdeconnect
@@ -203,6 +207,9 @@ plugin=org.kde.kdeconnect
 [Containments][62][Applets][67]
 immutability=1
 plugin=org.kde.plasma.notifications
+
+[Containments][62][Applets][67][Configuration]
+PreloadWeight=70
 
 [Containments][62][Applets][70]
 immutability=1
@@ -217,7 +224,7 @@ immutability=1
 plugin=org.kde.plasma.mediacontroller
 
 [Containments][62][Applets][79][Configuration]
-PreloadWeight=23
+PreloadWeight=0
 
 [Containments][62][General]
 extraItems=org.kde.plasma.bluetooth,org.kde.plasma.battery,org.kde.plasma.clipboard,org.kde.plasma.devicenotifier,org.kde.plasma.mediacontroller,org.kde.plasma.notifications,org.kde.plasma.volume,org.kde.kdeconnect
@@ -237,4 +244,4 @@ Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/firefox.desktop,0,desktop:/thunderbird.desktop,0,desktop:/Projects,0,desktop:/geany.desktop,0
+screenMapping=desktop:/Projects,0,desktop:/firefox.desktop,0,desktop:/geany.desktop,0,desktop:/thunderbird.desktop,0

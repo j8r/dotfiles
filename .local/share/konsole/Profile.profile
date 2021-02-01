@@ -8,5 +8,6 @@ Parent=FALLBACK/
 ShowTerminalSizeHint=false
 
 [Scrolling]
+HistorySize=9999
 ScrollBarPosition=2
 ScrollFullPage=false

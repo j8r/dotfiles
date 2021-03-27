@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Networkmmanager applet
 Exec=nm-applet --indicator
-Hidden=true
+Hidden=false
 Icon=network-wireless
 Name=Network
 Terminal=false

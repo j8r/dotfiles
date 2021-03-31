@@ -1,9 +1,0 @@
-[Desktop Entry]
-Comment=Networkmmanager applet
-Exec=nm-applet --indicator
-Hidden=false
-Icon=network-wireless
-Name=Network
-Terminal=false
-Type=Application
-X-LXQt-Module=true

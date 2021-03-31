@@ -25,6 +25,7 @@
 !/.config/plasma-org.kde.plasma.desktop-appletsrc
 !/.config/lxqt
 /.config/lxqt/debug.log
+!/.config/nm-tray
 !/.config/pavucontrol-qt
 !/.config/pcmanfm-qt/lxqt
 !/.config/qterminal.org

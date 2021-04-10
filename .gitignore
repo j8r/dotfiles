@@ -28,6 +28,7 @@
 !/.config/nm-tray
 !/.config/pavucontrol-qt
 !/.config/pcmanfm-qt/lxqt
+!/.config/pcmanfm-qt/lxqt/settings.conf
 !/.config/qterminal.org
 !/.config/vlc
 !/.gitconfig

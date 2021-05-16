@@ -27,8 +27,8 @@
 /.config/lxqt/debug.log
 !/.config/nm-tray
 !/.config/pavucontrol-qt
-!/.config/pcmanfm-qt/lxqt
-!/.config/pcmanfm-qt/lxqt/settings.conf
+!/.config/pcmanfm-qt
+/.config/pcmanfm-qt/default
 !/.config/qterminal.org
 !/.config/vlc
 !/.gitconfig

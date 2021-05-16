@@ -17,8 +17,8 @@
 /.config/geany/geany_socket_*
 !/.config/breezerc
 !/.config/gtk-3.0
-!.config/kdeglobals
-!.config/kglobalshortcutsrc
+!/.config/kdeglobals
+!/.config/kglobalshortcutsrc
 !/.config/konsolerc
 !/.config/kwinrc
 !/.config/kwinrulesrc

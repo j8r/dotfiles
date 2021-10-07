@@ -25,13 +25,14 @@
 !/.config/plasma-org.kde.plasma.desktop-appletsrc
 !/.config/lxqt
 /.config/lxqt/debug.log
-!/.config/nm-tray
+!/.config/nm-tray/nm-tray.conf
 !/.config/pavucontrol-qt
 !/.config/pcmanfm-qt
 !/.config/pcmanfm-qt
 /.config/pcmanfm-qt/default
 /.config/pcmanfm-qt/default/settings.conf
 !/.config/qterminal.org
+!/.config/nm-tray
 !/.config/vlc
 !/.gitconfig
 !/.qpsrc

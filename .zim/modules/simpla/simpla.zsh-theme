@@ -118,10 +118,7 @@ prompt_precmd() {
 }
 
 prompt_setup() {
-  zmodload zsh/datetime
-  prompt_opts=(cr percent sp subst)
   add-zsh-hook precmd prompt_precmd
 }
 
 prompt_setup "$@"
-

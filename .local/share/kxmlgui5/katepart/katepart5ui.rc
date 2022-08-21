@@ -1,0 +1,7 @@
+<!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
+<gui translationDomain="ktexteditor5" version="99" name="KatePartView">
+ <ActionProperties scheme="Default">
+  <Action shortcut="Ctrl+Y" name="edit_redo"/>
+ </ActionProperties>
+ <ActionProperties scheme="New Scheme"/>
+</gui>

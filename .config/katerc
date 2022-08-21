@@ -1,0 +1,10 @@
+[General]
+Last Session=session
+Show Full Path in Title=true
+Startup Session=last
+
+[KTextEditor Renderer]
+Font=Hack,11
+
+[KTextEditor::Search]
+Search History=path,Path,Title,session,11

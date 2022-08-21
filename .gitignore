@@ -17,6 +17,7 @@
 !/.config/gtk-3.0
 !/.config/gtkrc
 !/.config/gtkrc-2.0
+!/.config/katerc
 !/.config/kdeglobals
 !/.config/kglobalshortcutsrc
 !/.config/konsolerc
@@ -48,6 +49,9 @@
 !/.local/share/konsole/Profile.profile
 !/.local/share/kxmlgui5
 /.local/share/kxmlgui5/*
+!/.local/share/kxmlgui5/katepart
+/.local/share/kxmlgui5/katepart/*
+!/.local/share/kxmlgui5/katepart/katepart5ui.rc
 !/.local/share/kxmlgui5/konsole
 /.local/share/kxmlgui5/konsole/*
 !/.local/share/kxmlgui5/konsole/konsoleui.rc

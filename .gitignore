@@ -13,8 +13,6 @@
 /.config/falkon/profiles/default/*
 !/.config/falkon/profiles/default/settings.ini
 !/.config/fontconfig
-!/.config/geany
-/.config/geany/geany_socket_*
 !/.config/breezerc
 !/.config/gtk-3.0
 !/.config/gtkrc

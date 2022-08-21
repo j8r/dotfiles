@@ -42,12 +42,3 @@ Restore specific files, or all if none set
 `su -c "cp -r $HOME/.z* ~/; chsh -s $(which zsh)"`
 
 - Logout to apply the changes to the user
-
-## Update subtree
-
-```sh
-git stash
-git subtree pull --prefix .config/geany/geany-themes https://github.com/geany/geany-themes master --squash
-git subtree pull --prefix .config/geany/geany-crystal https://github.com/crystal-lang-tools/geany-crystal master --squash
-git stash apply
-```

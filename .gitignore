@@ -39,9 +39,6 @@
 !/.qpsrc
 !/.local
 /.local/*
-!/.local/bin
-/.local/bin/*
-!/.local/bin/governor
 !/.local/share
 /.local/share/*
 !/.local/share/konsole

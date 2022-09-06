@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup
 
 [Compositing]
 GLCore=true
@@ -11,9 +11,3 @@ Id_2=316dd201-2b42-412b-90a0-21972f2bc299
 Id_3=fcc3fb7d-1798-4107-aa1d-159b026eac78
 Number=3
 Rows=1
-
-[Effect-PresentWindows]
-BorderActivateAll=9
-
-[Effect-Slide]
-Duration=200

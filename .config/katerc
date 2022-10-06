@@ -3,6 +3,10 @@ Last Session=session
 Show Full Path in Title=true
 Startup Session=last
 
+[KTextEditor Document]
+Indentation Width=2
+Tab Width=2
+
 [KTextEditor Renderer]
 Font=Hack,11
 

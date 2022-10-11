@@ -26,7 +26,7 @@ PreloadWeight=42
 [Containments][52][General]
 ToolBoxButtonState=topcenter
 ToolBoxButtonX=668
-positions=1,17,desktop:/thunderbird.desktop,0,2,desktop:/geany.desktop,0,3,desktop:/Projects,0,0,desktop:/firefox.desktop,0,1
+positions=1,17,desktop:/thunderbird.desktop,0,2,desktop:/org.kde.kate.desktop,0,3,desktop:/Projects,0,0,desktop:/firefox.desktop,0,1
 sortMode=-1
 
 [Containments][52][Wallpaper][org.kde.image][General]
@@ -95,7 +95,7 @@ DialogHeight=540
 DialogWidth=720
 
 [Containments][57][Applets][60][Configuration][General]
-launchers=applications:org.kde.konsole.desktop,applications:firefox.desktop,applications:geany.desktop
+launchers=applications:org.kde.konsole.desktop,applications:firefox.desktop,applications:org.kde.kate.desktop
 
 [Containments][57][Applets][61]
 immutability=1
@@ -307,4 +307,4 @@ Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.jpg
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/geany.desktop,0,desktop:/firefox.desktop,0,desktop:/thunderbird.desktop,0,desktop:/Projects,0
+screenMapping=desktop:/org.kde.kate.desktop,0,desktop:/firefox.desktop,0,desktop:/thunderbird.desktop,0,desktop:/Projects,0

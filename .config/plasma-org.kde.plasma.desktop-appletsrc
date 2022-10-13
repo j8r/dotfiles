@@ -81,28 +81,28 @@ immutability=1
 plugin=org.kde.plasma.pager
 
 [Containments][57][Applets][59][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][57][Applets][60]
 immutability=1
 plugin=org.kde.plasma.taskmanager
 
 [Containments][57][Applets][60][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][57][Applets][60][Configuration][ConfigDialog]
 DialogHeight=540
 DialogWidth=720
 
 [Containments][57][Applets][60][Configuration][General]
-launchers=applications:org.kde.konsole.desktop,applications:firefox.desktop,applications:org.kde.kate.desktop
+launchers=applications:org.kde.konsole.desktop,applications:org.kde.dolphin.desktop,applications:thunderbird.desktop,applications:firefox.desktop,applications:org.kde.kate.desktop
 
 [Containments][57][Applets][61]
 immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][57][Applets][61][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 SystrayContainmentId=62
 
 [Containments][57][Applets][68]
@@ -110,7 +110,7 @@ immutability=1
 plugin=org.kde.plasma.digitalclock
 
 [Containments][57][Applets][68][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 
 [Containments][57][Applets][68][Configuration][Appearance]
 dateFormat=isoDate
@@ -125,7 +125,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][57][Applets][77][Configuration]
-PreloadWeight=97
+PreloadWeight=100
 
 [Containments][57][Applets][77][Configuration][Appearance]
 chartFace=org.kde.ksysguard.linechart
@@ -186,7 +186,7 @@ immutability=1
 plugin=org.kde.plasma.systemmonitor
 
 [Containments][57][Applets][79][Configuration]
-PreloadWeight=70
+PreloadWeight=25
 
 [Containments][57][Applets][79][Configuration][Appearance]
 chartFace=org.kde.ksysguard.horizontalbars
@@ -198,18 +198,19 @@ DialogWidth=720
 
 [Containments][57][Applets][79][Configuration][SensorColors]
 mem/physical/allocated=61,174,233
+memory/physical/used=61,174,233
 
 [Containments][57][Applets][79][Configuration][Sensors]
-highPrioritySensorIds=["mem/physical/allocated"]
-lowPrioritySensorIds=["mem/physical/total"]
-totalSensors=["mem/physical/allocatedlevel"]
+highPrioritySensorIds=["memory/physical/used"]
+lowPrioritySensorIds=["memory/physical/total"]
+totalSensors=["memory/physical/usedPercent"]
 
 [Containments][57][ConfigDialog]
-DialogHeight=1080
-DialogWidth=169
+DialogHeight=900
+DialogWidth=168
 
 [Containments][57][Configuration]
-PreloadWeight=42
+PreloadWeight=0
 
 [Containments][57][General]
 AppletOrder=58;59;60;77;78;79;61;68
@@ -228,7 +229,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][62][Applets][63][Configuration]
-PreloadWeight=92
+PreloadWeight=100
 
 [Containments][62][Applets][63][Configuration][ConfigDialog]
 DialogHeight=540
@@ -239,42 +240,42 @@ immutability=1
 plugin=org.kde.plasma.clipboard
 
 [Containments][62][Applets][64][Configuration]
-PreloadWeight=72
+PreloadWeight=5
 
 [Containments][62][Applets][65]
 immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][62][Applets][65][Configuration]
-PreloadWeight=52
+PreloadWeight=87
 
 [Containments][62][Applets][66]
 immutability=1
 plugin=org.kde.kdeconnect
 
 [Containments][62][Applets][66][Configuration]
-PreloadWeight=42
+PreloadWeight=5
 
 [Containments][62][Applets][67]
 immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][62][Applets][67][Configuration]
-PreloadWeight=77
+PreloadWeight=10
 
 [Containments][62][Applets][70]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][62][Applets][70][Configuration]
-PreloadWeight=26
+PreloadWeight=5
 
 [Containments][62][Applets][71]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][62][Applets][71][Configuration]
-PreloadWeight=42
+PreloadWeight=100
 
 [Containments][62][Applets][79]
 immutability=1

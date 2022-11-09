@@ -1,5 +1,10 @@
 [user]
 	email = git@jrei.ch
 	name = Julien Reichardt
+	signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM1UZ+6J6pbu/AeWEhlWHULbtkc5VBhUpxPLiZmFF+7I git@jrei.ch
 [pull]
 	ff = only
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

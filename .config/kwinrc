@@ -11,3 +11,12 @@ Id_2=316dd201-2b42-412b-90a0-21972f2bc299
 Id_3=fcc3fb7d-1798-4107-aa1d-159b026eac78
 Number=3
 Rows=1
+
+[Script-desktopchangeosd]
+TextOnly=true
+
+[Windows]
+RollOverDesktops=true
+
+[Xwayland]
+Scale=1

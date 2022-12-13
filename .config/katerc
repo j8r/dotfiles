@@ -2,6 +2,7 @@
 Last Session=session
 Show Full Path in Title=true
 Startup Session=last
+Show Menu Bar=false 
 
 [KTextEditor Document]
 Indentation Width=2

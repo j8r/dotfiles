@@ -6,6 +6,7 @@ Show Menu Bar=false
 
 [KTextEditor Document]
 Indentation Width=2
+Swap File Mode=0
 Tab Width=2
 
 [KTextEditor Renderer]

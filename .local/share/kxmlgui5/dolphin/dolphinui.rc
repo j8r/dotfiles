@@ -1,0 +1,61 @@
+<!DOCTYPE gui>
+<gui translationDomain="kxmlgui5" version="38" name="dolphin">
+ <ToolBar noMerge="1" name="mainToolBar" alreadyVisited="1">
+  <text context="@title:menu" translationDomain="dolphin">Main Toolbar</text>
+  <Action name="go_back"/>
+  <Action name="go_forward"/>
+  <Action name="view_redisplay"/>
+  <Separator name="separator_0"/>
+  <Action name="icons"/>
+  <Action name="compact"/>
+  <Action name="details"/>
+  <Action name="url_navigators"/>
+  <Action name="split_view"/>
+  <Action name="split_stash"/>
+  <Action name="toggle_search"/>
+  <Action name="hamburger_menu"/>
+ </ToolBar>
+ <State name="new_file">
+  <disable>
+   <Action name="edit_undo"/>
+   <Action name="edit_redo"/>
+   <Action name="edit_cut"/>
+   <Action name="renamefile"/>
+   <Action name="movetotrash"/>
+   <Action name="deletefile"/>
+   <Action name="invert_selection"/>
+   <Separator/>
+   <Action name="go_back"/>
+   <Action name="go_forward"/>
+  </disable>
+ </State>
+ <State name="has_selection">
+  <enable>
+   <Action name="invert_selection"/>
+  </enable>
+ </State>
+ <State name="has_no_selection">
+  <disable>
+   <Action name="delete_shortcut"/>
+   <Action name="invert_selection"/>
+  </disable>
+ </State>
+ <ActionProperties scheme="Default">
+  <Action priority="0" name="go_back"/>
+  <Action priority="0" name="go_forward"/>
+  <Action priority="0" name="go_up"/>
+  <Action priority="0" name="go_home"/>
+  <Action priority="0" name="stop"/>
+  <Action priority="0" name="icons"/>
+  <Action priority="0" name="compact"/>
+  <Action priority="0" name="details"/>
+  <Action priority="0" name="view_zoom_in"/>
+  <Action priority="0" name="view_zoom_reset"/>
+  <Action priority="0" name="view_zoom_out"/>
+  <Action priority="0" name="edit_cut"/>
+  <Action priority="0" name="edit_copy"/>
+  <Action priority="0" name="edit_paste"/>
+  <Action priority="0" name="toggle_search"/>
+  <Action priority="0" name="toggle_filter"/>
+ </ActionProperties>
+</gui>

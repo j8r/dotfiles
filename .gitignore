@@ -1,10 +1,10 @@
 /*
 !/.config
+/.config/*
 # Repository-related files
 !/.gitignore
 !/LICENSE
 !/README.md
-/.config/*
 !/.config/autostart
 !/.config/autostart/cmst
 !/.config/cmst
@@ -49,8 +49,9 @@
 !/.local/share/konsole/Profile.profile
 !/.local/share/kxmlgui5
 /.local/share/kxmlgui5/*
+!/.local/share/kxmlgui5/dolphin
+!/.local/share/kxmlgui5/dolphin/dolphinui.rc
 !/.local/share/kxmlgui5/katepart
-/.local/share/kxmlgui5/katepart/*
 !/.local/share/kxmlgui5/katepart/katepart5ui.rc
 !/.local/share/kxmlgui5/konsole
 /.local/share/kxmlgui5/konsole/*

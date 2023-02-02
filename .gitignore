@@ -44,6 +44,8 @@
 !/.local/share/kate
 /.local/share/kate/*
 !/.local/share/kate/anonymous.katesession
+/.local/share/kate/sessions/*
+!/.local/share/kate/sessions/session.katesession
 !/.local/share/konsole
 /.local/share/konsole/*
 !/.local/share/konsole/Profile.profile

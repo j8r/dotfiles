@@ -73,3 +73,6 @@ ToolBarsMovable=Disabled
 [MainWindow0 Settings]
 MenuBar=Disabled
 ToolBarsMovable=Disabled
+
+[Plugin:katefilebrowserplugin:MainWindow:0]
+View Style=Tree

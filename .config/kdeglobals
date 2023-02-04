@@ -133,7 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [KDE]
-AnimationDurationFactor=0.5
+AnimationDurationFactor=0.25
 LookAndFeelPackage=org.kde.breezedark.desktop
 
 [WM]

@@ -23,15 +23,15 @@ katexmltoolsplugin=false
 keyboardmacrosplugin=false
 ktexteditorpreviewplugin=false
 latexcompletionplugin=false
-lspclientplugin=true
+lspclientplugin=false
 rainbowparens=false
 tabswitcherplugin=true
 textfilterplugin=true
 
 [MainWindow0]
 Active ViewSpace=0
-Kate-MDI-Sidebar-0-Bar-0-TvList=kate_private_plugin_katefiletreeplugin,kateproject,kateprojectgit,kate_private_plugin_katefileselectorplugin,lspclient_symbol_outline,kate_plugin_symbolviewer
-Kate-MDI-Sidebar-3-Bar-0-TvList=output,kate_plugin_katesearch,kateprojectinfo,kate_private_plugin_katekonsoleplugin,kate_lspclient
+Kate-MDI-Sidebar-0-Bar-0-TvList=kate_private_plugin_katefiletreeplugin,kateproject,kateprojectgit,kate_private_plugin_katefileselectorplugin,kate_plugin_symbolviewer
+Kate-MDI-Sidebar-3-Bar-0-TvList=output,kate_plugin_katesearch,kateprojectinfo,kate_private_plugin_katekonsoleplugin
 Kate-MDI-Sidebar-Style=2
 Kate-MDI-Sidebar-Visible=true
 Kate-MDI-ToolView-kate_lspclient-Position=3

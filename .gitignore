@@ -50,7 +50,6 @@
 /.local/share/konsole/*
 !/.local/share/konsole/Profile.profile
 !/.local/share/kxmlgui5
-/.local/share/kxmlgui5/*
 !/.local/share/kxmlgui5/dolphin
 !/.local/share/kxmlgui5/dolphin/dolphinui.rc
 !/.local/share/kxmlgui5/katepart

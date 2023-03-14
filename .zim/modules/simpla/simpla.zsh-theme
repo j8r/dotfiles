@@ -108,9 +108,9 @@ $commits_to_push\
 prompt_precmd() {
   local git_path
   if git_path=$(git rev-parse --show-toplevel 2>/dev/null) ;then
-    # Fetch if not done since more than a day
     local fetch_time=$(stat -c '%Z' $git_path/.git/FETCH_HEAD 2>/dev/null || printf 0)
-    [ $(( $EPOCHSECONDS - $fetch_time)) -gt 86400 ] && git fetch --all --tags --prune --prune-tags
+    # Fetch if not done since more than an hour
+    [ $(( ${EPOCHREALTIME%.*} - $fetch_time )) -gt 3600 ] && git fetch --all --tags --prune --prune-tags
   fi
 
   PROMPT="%(!:%B%F{red}%m:%B%F{green}%m)%f%b %(?:%F{cyan}:%F{magenta})$(_pwd_reduced $git_path)%f "

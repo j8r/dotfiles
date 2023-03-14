@@ -10,7 +10,7 @@ katectagsplugin=false
 katefilebrowserplugin=true
 katefiletreeplugin=true
 kategdbplugin=false
-kategitblameplugin=false
+kategitblameplugin=true
 katekonsoleplugin=true
 kateprojectplugin=true
 katereplicodeplugin=false
@@ -21,7 +21,7 @@ katesymbolviewerplugin=true
 katexmlcheckplugin=false
 katexmltoolsplugin=false
 keyboardmacrosplugin=false
-ktexteditorpreviewplugin=false
+ktexteditorpreviewplugin=true
 latexcompletionplugin=false
 lspclientplugin=false
 rainbowparens=false
@@ -30,13 +30,10 @@ textfilterplugin=true
 
 [MainWindow0]
 Active ViewSpace=0
-Kate-MDI-Sidebar-0-Bar-0-TvList=kate_private_plugin_katefiletreeplugin,kateproject,kateprojectgit,kate_private_plugin_katefileselectorplugin,kate_plugin_symbolviewer
-Kate-MDI-Sidebar-3-Bar-0-TvList=output,kate_plugin_katesearch,kateprojectinfo,kate_private_plugin_katekonsoleplugin
+Kate-MDI-Sidebar-0-Bar-0-TvList=kate_private_plugin_katefiletreeplugin,kateproject,kateprojectgit,kate_plugin_symbolviewer,kate_private_plugin_katefileselectorplugin
+Kate-MDI-Sidebar-3-Bar-0-TvList=output,kate_plugin_katesearch,kateprojectinfo,kate_private_plugin_katekonsoleplugin,ktexteditorpreviewplugin
 Kate-MDI-Sidebar-Style=2
 Kate-MDI-Sidebar-Visible=true
-Kate-MDI-ToolView-kate_lspclient-Position=3
-Kate-MDI-ToolView-kate_lspclient-Show-Button-In-Sidebar=true
-Kate-MDI-ToolView-kate_lspclient-Visible=false
 Kate-MDI-ToolView-kate_plugin_katesearch-Position=3
 Kate-MDI-ToolView-kate_plugin_katesearch-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-kate_plugin_katesearch-Visible=false
@@ -54,16 +51,16 @@ Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Show-Button-In-Sidebar=t
 Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Visible=false
 Kate-MDI-ToolView-kateproject-Position=0
 Kate-MDI-ToolView-kateproject-Show-Button-In-Sidebar=true
-Kate-MDI-ToolView-kateproject-Visible=false
+Kate-MDI-ToolView-kateproject-Visible=true
 Kate-MDI-ToolView-kateprojectgit-Position=0
 Kate-MDI-ToolView-kateprojectgit-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-kateprojectgit-Visible=false
 Kate-MDI-ToolView-kateprojectinfo-Position=3
 Kate-MDI-ToolView-kateprojectinfo-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-kateprojectinfo-Visible=false
-Kate-MDI-ToolView-lspclient_symbol_outline-Position=0
-Kate-MDI-ToolView-lspclient_symbol_outline-Show-Button-In-Sidebar=true
-Kate-MDI-ToolView-lspclient_symbol_outline-Visible=false
+Kate-MDI-ToolView-ktexteditorpreviewplugin-Position=3
+Kate-MDI-ToolView-ktexteditorpreviewplugin-Show-Button-In-Sidebar=true
+Kate-MDI-ToolView-ktexteditorpreviewplugin-Visible=true
 Kate-MDI-ToolView-output-Position=3
 Kate-MDI-ToolView-output-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-output-Visible=false
@@ -76,3 +73,7 @@ ToolBarsMovable=Disabled
 
 [Plugin:katefilebrowserplugin:MainWindow:0]
 View Style=Tree
+
+[Plugin:ktexteditorpreviewplugin:MainWindow:0]
+automaticUpdate=true
+documentLocked=false

@@ -8,6 +8,7 @@ Show Menu Bar=false
 Indentation Width=2
 Swap File Mode=0
 Tab Width=2
+Word Wrap=false
 
 [KTextEditor Renderer]
 Font=Hack,11

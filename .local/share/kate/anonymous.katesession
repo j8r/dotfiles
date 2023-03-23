@@ -48,7 +48,7 @@ Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Show-Button-In-Sidebar=
 Kate-MDI-ToolView-kate_private_plugin_katefiletreeplugin-Visible=false
 Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Position=3
 Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Show-Button-In-Sidebar=true
-Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Visible=false
+Kate-MDI-ToolView-kate_private_plugin_katekonsoleplugin-Visible=true
 Kate-MDI-ToolView-kateproject-Position=0
 Kate-MDI-ToolView-kateproject-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-kateproject-Visible=true
@@ -60,7 +60,7 @@ Kate-MDI-ToolView-kateprojectinfo-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-kateprojectinfo-Visible=false
 Kate-MDI-ToolView-ktexteditorpreviewplugin-Position=3
 Kate-MDI-ToolView-ktexteditorpreviewplugin-Show-Button-In-Sidebar=true
-Kate-MDI-ToolView-ktexteditorpreviewplugin-Visible=true
+Kate-MDI-ToolView-ktexteditorpreviewplugin-Visible=false
 Kate-MDI-ToolView-output-Position=3
 Kate-MDI-ToolView-output-Show-Button-In-Sidebar=true
 Kate-MDI-ToolView-output-Visible=false
@@ -73,6 +73,9 @@ ToolBarsMovable=Disabled
 
 [Plugin:katefilebrowserplugin:MainWindow:0]
 View Style=Tree
+
+[Plugin:katesearchplugin:MainWindow:0]
+ExpandSearchResults=true
 
 [Plugin:ktexteditorpreviewplugin:MainWindow:0]
 automaticUpdate=true

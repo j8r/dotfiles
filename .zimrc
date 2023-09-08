@@ -28,7 +28,7 @@ zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
 zmodule git-info
 # prompt theme.
-zmodule simpla
+zmodule simpla --frozen
 
 #
 # Completion

@@ -129,7 +129,7 @@ unset key
 # }}} End configuration added by Zim install
 
 export EDITOR=vi
-export PATH=/usr/sbin:$HOME/.local/bin:$PATH
+PATH=$HOME/.local/bin:$PATH:/usr/sbin
 
 ssh_env=${XDG_CACHE_HOME:-$HOME}/.ssh-agent
 [ -f $ssh_env ] && . $ssh_env
@@ -140,3 +140,4 @@ if ! ssh-add -l >/dev/null 2>&1 ;then
 fi
 
 unset ssh_env
+alias docker=podman

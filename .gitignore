@@ -39,6 +39,9 @@
 !/.qpsrc
 !/.local
 /.local/*
+!/.local/bin
+/.local/bin/*
+!/.local/bin/docker
 !/.local/share
 /.local/share/*
 !/.local/share/kate

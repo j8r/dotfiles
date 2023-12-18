@@ -140,4 +140,3 @@ if ! ssh-add -l >/dev/null 2>&1 ;then
 fi
 
 unset ssh_env
-alias docker=podman

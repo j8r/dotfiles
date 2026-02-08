@@ -1,8 +1,9 @@
-<!DOCTYPE gui>
-<gui translationDomain="kate" name="kate" version="102">
- <MenuBar alreadyVisited="1">
-  <Menu alreadyVisited="1" name="file" noMerge="1">
-   <text translationDomain="kate">&amp;File</text>
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
+<gui name="kate" translationDomain="kate" version="110">
+ <MenuBar>
+  <Menu name="file" noMerge="1">
+   <text>&amp;File</text>
    <Action name="file_new"/>
    <Action name="view_new_view"/>
    <DefineGroup name="new_merge"/>
@@ -24,23 +25,25 @@
    <Action name="file_close_other"/>
    <Action name="file_close_all"/>
    <Action name="file_close_orphaned"/>
+   <Action name="file_close_window"/>
    <DefineGroup name="close_merge"/>
    <Separator/>
-   <Menu name="file_file_actions" noMerge="1">
-    <text translationDomain="kate">File Actions</text>
+   <Menu name="file_file_actions">
+    <text>File Act&amp;ions</text>
     <Action name="file_rename"/>
     <Action name="file_delete"/>
     <Action name="file_compare"/>
     <Separator/>
     <Action name="file_copy_filepath"/>
+    <Action name="file_copy_filename"/>
     <Action name="file_open_containing_folder"/>
     <Action name="file_properties"/>
    </Menu>
    <Separator/>
    <Action name="file_quit"/>
   </Menu>
-  <Menu alreadyVisited="1" name="edit" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;Edit</text>
+  <Menu name="edit">
+   <text>&amp;Edit</text>
    <DefineGroup name="edit_undo_merge"/>
    <Separator group="edit_undo_merge"/>
    <DefineGroup name="edit_paste_merge"/>
@@ -50,13 +53,29 @@
    <DefineGroup name="edit_find_merge"/>
    <Separator/>
   </Menu>
-  <Menu name="selection" append="before_view" noMerge="1">
-   <text translationDomain="kate">&amp;Selection</text>
+  <Menu append="before_view" name="selection">
+   <text>Sele&amp;ction</text>
   </Menu>
-  <Menu alreadyVisited="1" name="view" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;View</text>
-   <Menu name="view-split" noMerge="1">
-    <text translationDomain="kate">Split View</text>
+  <Menu name="go">
+   <text>&amp;Go</text>
+   <Action name="view_quick_open"/>
+   <DefineGroup name="view_switch_tab"/>
+   <Separator/>
+   <DefineGroup name="edit_goto"/>
+   <DefineGroup name="switch_document"/>
+   <Separator/>
+   <Action name="view_next_tab"/>
+   <Action name="view_prev_tab"/>
+   <Separator/>
+   <Action name="view_history_back"/>
+   <Action name="view_history_forward"/>
+   <Separator/>
+   <DefineGroup name="edit_goto2"/>
+  </Menu>
+  <Menu name="view">
+   <text>&amp;View</text>
+   <Menu name="view-split">
+    <text>Split View</text>
     <Action name="go_prev_split_view"/>
     <Action name="go_next_split_view"/>
     <Separator/>
@@ -75,6 +94,7 @@
     <Action name="view_close_others"/>
     <Separator/>
     <Action name="view_hide_others"/>
+    <Action name="toggle_active_viewspace_scroll_sync"/>
     <Separator/>
     <Action name="view_split_move_left"/>
     <Action name="view_split_move_right"/>
@@ -83,35 +103,15 @@
    </Menu>
    <Separator/>
    <Merge name="kate_mdi_view_actions"/>
+   <Action name="view_windows"/>
    <Separator/>
    <DefineGroup name="view_operations"/>
-   <Separator weakSeparator="1"/>
-   <Action name="fullscreen"/>
-  </Menu>
-  <Menu alreadyVisited="1" name="go" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;Go</text>
-   <Action name="view_quick_open"/>
-   <DefineGroup name="view_switch_tab"/>
-   <Separator/>
-   <DefineGroup name="edit_goto"/>
-   <DefineGroup name="switch_document"/>
-   <Separator/>
-   <Action name="view_next_tab"/>
-   <Action name="view_prev_tab"/>
-   <Separator/>
-   <Action name="view_history_back"/>
-   <Action name="view_history_forward"/>
-   <Separator/>
-   <DefineGroup name="edit_goto2"/>
   </Menu>
   <DefineGroup name="after_view"/>
   <Merge/>
   <DefineGroup name="before_tools"/>
-  <Action name="sessions"/>
-  <Separator weakSeparator="1"/>
-  <Separator weakSeparator="1"/>
-  <Menu alreadyVisited="1" name="tools" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;Tools</text>
+  <Menu name="tools">
+   <text>&amp;Tools</text>
    <Action name="tools_external"/>
    <Separator/>
    <DefineGroup name="tools_operations"/>
@@ -125,42 +125,30 @@
    <Separator group="tools_git_blame"/>
    <DefineGroup name="tools_spelling"/>
    <DefineGroup name="tools_operations3"/>
+   <Merge name="tools_diagnosticsview">
+    <text>Diagnostics View</text>
+   </Merge>
   </Menu>
-  <Menu alreadyVisited="1" name="settings" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;Settings</text>
-   <Action name="colorscheme_menu" group="color"/>
+  <Action name="sessions"/>
+  <Menu name="settings">
+   <text>&amp;Settings</text>
+   <Action name="settings_style"/>
+   <Action group="color" name="colorscheme_menu"/>
    <DefineGroup name="color"/>
-   <Separator weakSeparator="1"/>
-   <Action name="options_show_menubar"/>
-   <Merge name="StandardToolBarMenuHandler"/>
-   <Merge name="KMDIViewActions"/>
-   <Action name="options_show_statusbar"/>
-   <Action name="settings_show_tab_bar" append="show_merge"/>
-   <Action name="settings_show_full_path" append="show_merge"/>
-   <Action name="settings_show_url_nav_bar" append="show_merge"/>
-   <Separator weakSeparator="1"/>
-   <Action name="switch_application_language"/>
-   <Action name="options_configure_keybinding"/>
-   <Action name="options_configure_toolbars"/>
-   <Action name="options_configure"/>
+   <Action append="show_merge" name="settings_show_tab_bar"/>
+   <Action append="show_merge" name="settings_show_full_path"/>
+   <Action append="show_merge" name="settings_show_url_nav_bar"/>
   </Menu>
-  <Separator weakSeparator="1"/>
-  <Menu alreadyVisited="1" name="help" noMerge="1">
-   <text translationDomain="kxmlgui5">&amp;Help</text>
-   <Action name="help_contents"/>
-   <Action name="help_whats_this"/>
-   <Action name="open_kcommand_bar"/>
-   <Separator weakSeparator="1"/>
+  <Menu name="help">
+   <text>&amp;Help</text>
    <Action name="help_welcome_page"/>
-   <Separator weakSeparator="1"/>
-   <Action name="help_report_bug"/>
-   <Separator weakSeparator="1"/>
-   <Action name="help_donate"/>
-   <Separator weakSeparator="1"/>
-   <Action name="help_about_app"/>
-   <Action name="help_about_kde"/>
   </Menu>
  </MenuBar>
+ <ToolBar name="hamburgerBar" noMerge="1">
+  <text translationDomain="kate">Hamburger Menu Toolbar</text>
+  <Spacer name="spacer_0"/>
+  <Action name="hamburger_menu"/>
+ </ToolBar>
  <ToolBar alreadyVisited="1" name="mainToolBar" noMerge="1">
   <text translationDomain="kate">Main Toolbar</text>
   <Action name="file_new"/>
@@ -173,15 +161,6 @@
   <DefineGroup name="zoom_operations"/>
  </ToolBar>
  <Merge/>
- <ToolBar name="hamburgerBar" noMerge="1">
-  <text translationDomain="kate">Hamburger Menu Toolbar</text>
-  <Spacer name="spacer_0"/>
-  <Action name="hamburger_menu"/>
- </ToolBar>
- <Menu name="ktexteditor_popup" noMerge="1">
-  <DefineGroup name="popup_operations"/>
-  <DefineGroup name="popup_operations2"/>
- </Menu>
  <Menu name="viewspace_popup" noMerge="1">
   <Action name="view_split_vert"/>
   <Action name="view_split_horiz"/>
@@ -191,8 +170,8 @@
   <Action name="go_back"/>
   <Action name="go_forward"/>
   <Action name="doc_list"/>
-  <Menu name="viewspace_popup_statusbar" noMerge="1">
-   <text translationDomain="kate">&amp;Status Bar Items</text>
+  <Menu name="viewspace_popup_statusbar">
+   <text>&amp;Status Bar Items</text>
    <Action name="show_cursor_pos"/>
    <Action name="show_char_count"/>
    <Action name="show_insert_mode"/>
@@ -201,8 +180,9 @@
    <Action name="show_doc_name"/>
   </Menu>
  </Menu>
- <ActionProperties scheme="Default">
-  <Action shortcut="Ctrl+Shift+J" name="view_split_horiz"/>
-  <Action shortcut="Ctrl+Shift+K" name="view_split_vert"/>
+ <ActionProperties>
+  <Action name="view_split_horiz" shortcut="Ctrl+Shift+J"/>
+  <Action name="view_split_vert" shortcut="Ctrl+Shift+K"/>
  </ActionProperties>
 </gui>
+<!-- kate: space-indent on; indent-width 2; replace-tabs on; -->

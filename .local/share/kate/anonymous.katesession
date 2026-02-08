@@ -1,11 +1,14 @@
 [Kate Plugins]
+bookmarksplugin=false
 cmaketoolsplugin=false
 compilerexplorer=false
+eslintplugin=false
 externaltoolsplugin=true
+formatplugin=false
 katebacktracebrowserplugin=false
 katebuildplugin=false
 katecloseexceptplugin=false
-katecolorpickerplugin=false
+katecolorpickerplugin=true
 katectagsplugin=false
 katefilebrowserplugin=true
 katefiletreeplugin=true

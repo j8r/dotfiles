@@ -27,6 +27,7 @@ cd ~/
 git init
 git remote add origin git@github.com:j8r/dotfiles.git
 git fetch
+git checkout master
 ```
 
 Restore specific files, or all if none set
